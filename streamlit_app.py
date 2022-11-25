@@ -2,6 +2,16 @@ import streamlit as st
 import weasyprint
 
 
+import subprocess
+
+try:
+    # sudo apt-get update
+    # sudo apt-get install wkhtmltopdf
+    subprocess.call(["pkg install pango"])
+except:
+    print("Error: pango not installed")
+
+
 # this is an python app to convert the webpages to pdf
 
 # this is the main function
