@@ -1,5 +1,5 @@
 import streamlit as st
-import pdfkit
+import weasyprint
 
 
 import subprocess
@@ -34,11 +34,8 @@ def main():
     name = st.text_input("Enter the name")
     if st.button("Convert"):
         st.text("Converting...")
-        pdfkit.from_url(url, name + ".pdf")
+        PDFbyte = weasyprint.HTML(url).write_pdf()
         st.success("Done")
-
-        with open(name + ".pdf", "rb") as pdf_file:
-            PDFbyte = pdf_file.read()
 
         st.download_button(
             label="download",
