@@ -1,17 +1,19 @@
 import streamlit as st
 
+
+import subprocess
+import shlex
+
 try:
     # sudo apt-get update
     # sudo apt-get install wkhtmltopdf
-    subprocess.call(["pkg install pango"])
+    subprocess.run(shlex.split("pkg install pango"))
 except:
     print("Error: pango not installed")
 
 
 import weasyprint
 
-
-import subprocess
 
 
 # this is an python app to convert the webpages to pdf
