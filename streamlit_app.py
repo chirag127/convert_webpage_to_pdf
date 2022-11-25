@@ -2,26 +2,6 @@ import streamlit as st
 import weasyprint
 
 
-import subprocess
-
-try:
-    # sudo apt-get update
-    # sudo apt-get install wkhtmltopdf
-    subprocess.call(["wkhtmltopdf", "--version"])
-    wkhtmltopdf_installed = True
-    print("wkhtmltopdf installed")
-except:
-    wkhtmltopdf_installed = False
-    print("wkhtmltopdf not installed")
-
-
-if not wkhtmltopdf_installed:
-
-    # install wkhtmltopdf
-    subprocess.call([ "apt-get", "-y", "update"])
-    subprocess.call([ "apt-get", "install", "-y", "wkhtmltopdf"])
-
-
 # this is an python app to convert the webpages to pdf
 
 # this is the main function
