@@ -6,8 +6,10 @@ import shlex
 
 try:
     # sudo apt-get update
-    # sudo apt-get install wkhtmltopdf
-    subprocess.run(shlex.split("pkg install pango"))
+    # sudo apt-get install wkhtmltopd
+    subprocess.run(shlex.split("sudo apt-get -y update"))
+
+    subprocess.run(shlex.split("sudo apt-get install-y libpangocairo-1.0-0"))
 except:
     print("Error: pango not installed")
 
