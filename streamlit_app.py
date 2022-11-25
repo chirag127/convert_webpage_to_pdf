@@ -1,6 +1,25 @@
 import streamlit as st
 import pdfkit
 
+
+import subprocess
+
+try:
+    # sudo apt-get update
+    # sudo apt-get install wkhtmltopdf
+    subprocess.call(['wkhtmltopdf', '--version'])
+    wkhtmltopdf_installed = True
+    print("wkhtmltopdf installed")
+except:
+    wkhtmltopdf_installed = False
+    print("wkhtmltopdf not installed")
+
+    # install wkhtmltopdf
+    subprocess.call(['sudo', 'apt-get', 'update'])
+    subprocess.call(['sudo', 'apt-get', 'install', 'wkhtmltopdf'])
+
+
+
 # this is an python app to convert the webpages to pdf
 
 # this is the main function
