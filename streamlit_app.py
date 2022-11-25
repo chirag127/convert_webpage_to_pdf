@@ -1,8 +1,4 @@
 import streamlit as st
-import weasyprint
-
-
-import subprocess
 
 try:
     # sudo apt-get update
@@ -10,6 +6,12 @@ try:
     subprocess.call(["pkg install pango"])
 except:
     print("Error: pango not installed")
+
+
+import weasyprint
+
+
+import subprocess
 
 
 # this is an python app to convert the webpages to pdf
