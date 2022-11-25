@@ -18,8 +18,8 @@ except:
 if not wkhtmltopdf_installed:
 
     # install wkhtmltopdf
-    subprocess.call(["sudo", "apt-get", "-y", "update"])
-    subprocess.call(["sudo", "apt-get", "install", "-y", "wkhtmltopdf"])
+    subprocess.call([ "apt-get", "-y", "update"])
+    subprocess.call([ "apt-get", "install", "-y", "wkhtmltopdf"])
 
 
 # this is an python app to convert the webpages to pdf
